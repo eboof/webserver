@@ -1,0 +1,165 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('background.webp') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+}
+
+.hamburger-menu {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.hamburger-icon {
+    background-color: rgba(255, 223, 186, 0.9);
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.hamburger-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: #333;
+}
+
+.dropdown {
+    display: none;
+    position: fixed;
+    top: 50px;
+    right: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.dropdown a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: #f1f1f1;
+}
+
+.dialog-box {
+    background: rgba(255, 223, 186, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    text-align: center;
+}
+
+.dialog-box h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.dialog-box p {
+    margin-top: 0;
+}
+
+.table-container {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.update-btn {
+    background: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.update-btn:hover {
+    background: #555;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.delete-btn:hover {
+    color: red;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: rgba(255, 223, 186, 0.9);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.delete-confirm-btn {
+    background: red;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.delete-confirm-btn:hover {
+    background: darkred;
+}
+

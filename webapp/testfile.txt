@@ -1,0 +1,39 @@
+To select all contents of the file:
+Press gg to go to the first line.
+Press G to go to the last line.
+Press Shift+v to enter Visual Line mode, which will select all lines between the first and last lines.
+To delete the selected contents:
+Press d to delete the selected lines.
+Some other methods from the search results:
+dG - Deletes all lines from the current cursor position to the end of the file 
+
+ggdG - Goes to the first line, then deletes all lines to the end 
+:%d or 1,$d - Deletes all lines in the file from the ex command mode 
+The ggGShift+vd approach allows you to visually select the entire file contents before deleting, which can be useful for confirming the selection. However, the :%d shortcut is more concise for quickly deleting all lines
+.
+Cutting (Deleting) Text:
+Use the d command to cut/delete text
+dd cuts the entire current line
+d$ cuts from the cursor to the end of the line
+dW cuts from the cursor to the start of the next word
+diw cuts the current word the cursor is on
+d0 or d^ cuts from the cursor to the start of the line
+ndd or dN cuts the current line plus N-1 lines below/above
+Copying (Yanking) Text:
+Use the y command to copy/yank text
+yy copies/yanks the entire current line
+y$ copies from the cursor to the end of the line
+yiw copies the current word the cursor is on
+yaw copies the current word plus trailing space
+y0 or y^ copies from the cursor to the start of the line
+nyy or yN copies the current line plus N-1 lines below/above
+Pasting Text:
+Use p to paste text after the cursor
+Use P to paste text before the cursor
+You can paste multiple times by using e.g. 3p to paste 3 times
+Visual Mode:
+Press v to enter visual mode, then use arrow keys to select text
+Press d to cut the selected text
+Press y to copy/yank the selected text
+Press p or P to paste the text
+The search results emphasize learning Vim's modal approach and "verb+noun" commands like delete inner word rather than trying to map cut/copy/paste directly. Mastering text objects and motions is key to efficiently editing in Vim.

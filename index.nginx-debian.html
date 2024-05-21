@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Web App</title>
+    <link rel="stylesheet" type="text/css" href="webapp/style.css"> <!-- Link to your CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('webapp/background.webp') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .dialog-box {
+            background: rgba(255, 223, 186, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .dialog-box h1 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .dialog-box p {
+            margin: 10px 0;
+        }
+        .dialog-box a button {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+            font-size: 16px;
+        }
+        .dialog-box a button:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="dialog-box">
+        <h1>Welcome to My Web App</h1>
+        <p>Please Register or Log In</p>
+        <a href="webapp/register.php"><button>Register</button></a>
+        <a href="webapp/login.php"><button>Login</button></a>
+    </div>
+</body>
+</html>
+
