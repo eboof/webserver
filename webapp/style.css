@@ -51,9 +51,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 600px;
-    max-height: 80vh;
-    overflow-y: auto;
+    width: 300px;
     text-align: center;
 }
 
@@ -62,104 +60,39 @@ body {
     margin-bottom: 10px;
 }
 
-.dialog-box p {
-    margin-top: 0;
+.dialog-box form {
+    display: flex;
+    flex-direction: column;
 }
 
-.table-container {
-    max-height: 60vh;
-    overflow-y: auto;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-table, th, td {
-    border: 1px solid #ddd;
-}
-
-th, td {
-    padding: 10px;
+.dialog-box form div {
+    margin-bottom: 10px;
     text-align: left;
 }
 
-th {
-    background-color: #f2f2f2;
+.dialog-box form label {
+    display: block;
+    margin-bottom: 5px;
 }
 
-.update-btn {
+.dialog-box form input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.dialog-box button {
     background: #333;
     color: #fff;
-    padding: 5px 10px;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
 }
 
-.update-btn:hover {
+.dialog-box button:hover {
     background: #555;
-}
-
-.delete-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-.delete-btn:hover {
-    color: red;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1001;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-    background-color: rgba(255, 223, 186, 0.9);
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 300px;
-    text-align: center;
-    border-radius: 10px;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.delete-confirm-btn {
-    background: red;
-    color: #fff;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.delete-confirm-btn:hover {
-    background: darkred;
 }
 

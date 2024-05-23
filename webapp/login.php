@@ -2,29 +2,29 @@
 session_start();
 
 // Database connection
-$conn = new mysqli('localhost', 'webuser', 'password', 'webapp');
+$conn = new mysqli("localhost", "webuser", "password", "webapp");
 if ($conn->connect_error) {
-    die('Connection failed: ' . $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $conn->real_escape_string($_POST['username']);
-    $password = $conn->real_escape_string($_POST['password']);
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $username = $conn->real_escape_string($_POST["username"]);
+    $password = $conn->real_escape_string($_POST["password"]);
 
     $sql = "SELECT * FROM users WHERE username='$username'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
-        if (password_verify($password, $user['password'])) {
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['username'] = $user['username'];
-            header('Location: welcome.php');
+        if (password_verify($password, $user["password"])) {
+            $_SESSION["user_id"] = $user["id"];
+            $_SESSION["username"] = $user["username"];
+            header("Location: welcome.php");
         } else {
-            echo "Invalid password.";
+            echo "Invalid password";
         }
     } else {
-        echo "No user found with that username.";
+        echo "No user found with that username";
     }
 }
 
@@ -68,12 +68,13 @@ $conn->close();
             width: calc(100% - 22px);
             padding: 10px;
             margin-bottom: 10px;
+            font-size: 16px;
             border: 1px solid #ddd;
             border-radius: 5px;
         }
         .login-box button {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             background: #333;
             color: #fff;
             border: none;
@@ -86,19 +87,6 @@ $conn->close();
         .lp-form-fill-button {
             display: none !important;
         }
-
-/*        input::-ms-clear, input::-ms-reveal {
-            display: none;
-            width: 0;
-            height: 0;
-        }
-
-        input {
-            position: relative;
-            z-index: 2;
-            background: transparent !important;
-        }
-*/
     </style>
 </head>
 <body>
@@ -108,7 +96,7 @@ $conn->close();
             <label for="username">Username</label>
             <input type="text" id="username" name="username" autocomplete="off" required>
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" autocomplete="new-password" required>
+            <input type="password" id="password" name="password" autocomplete="off" required>
             <button type="submit">Login</button>
         </form>
     </div>

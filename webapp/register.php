@@ -2,19 +2,22 @@
 session_start();
 
 // Database connection
-$conn = new mysqli('localhost', 'webuser', 'password', 'webapp');
+$conn = new mysqli("localhost", "webuser", "password", "webapp");
 if ($conn->connect_error) {
-    die('Connection failed: ' . $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $conn->real_escape_string($_POST['username']);
-    $email = $conn->real_escape_string($_POST['email']);
-    $password = password_hash($conn->real_escape_string($_POST['password']), PASSWORD_BCRYPT);
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $username = $conn->real_escape_string($_POST["username"]);
+    $email = $conn->real_escape_string($_POST["email"]);
+    $password = password_hash(
+        $conn->real_escape_string($_POST["password"]),
+        PASSWORD_BCRYPT
+    );
 
     $sql = "INSERT INTO users (username, email, password, role) VALUES ('$username', '$email', '$password', 'user')";
-    if ($conn->query($sql) === TRUE) {
-        header('Location: login.php');
+    if ($conn->query($sql) === true) {
+        header("Location: login.php");
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
@@ -61,12 +64,13 @@ $conn->close();
             width: calc(100% - 22px);
             padding: 10px;
             margin-bottom: 10px;
+            font-size: 16px;
             border: 1px solid #ddd;
             border-radius: 5px;
         }
         .register-box button {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             background: #333;
             color: #fff;
             border: none;
